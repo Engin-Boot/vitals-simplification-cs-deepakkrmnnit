@@ -40,6 +40,10 @@ class Checker
         {
             return true;
         }
+	smsAlert smsMessage=new smsAlert();
+        smsMessage.Alertmessage("Vitals is not Ok");
+        voiceAlert voiceMessage=new voiceAlert();
+        voiceMessage.Alertmessage("Vitals is not Ok");   
         return false;
     }
     static bool vitalsAreOk(float bpm, float spo2, float respRate)
