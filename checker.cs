@@ -3,12 +3,35 @@ using System.Diagnostics;
 
 class Checker
 {
+    abstract class Alert
+	{
+        public abstract void Alertmessage(string message);
+
+	}
+    class smsAlert:Alert
+	{
+        public override void Alertmessage(string message)
+        {
+            Console.WriteLine(message);
+        }
+	}
+    class voiceAlert : Alert
+    {
+        public override void Alertmessage(string message)
+        {
+            Console.WriteLine(message);
+        }
+    }
     static bool vitalsIsOk(float value, int lower, int upper)
     {
         if (value>=lower && value<=upper)
         {
             return true;
         }
+        smsAlert smsMessage=new smsAlert();
+        smsMessage.Alertmessage("Vitals is not Ok");
+        voiceAlert voiceMessage=new voiceAlert();
+        voiceMessage.Alertmessage("Vitals is not Ok");
         return false;
     }
     static bool vitalsIsOk(float value, int lower)
