@@ -43,6 +43,16 @@ class Checker
     {
         ExpectTrue(vitalsAreOk(100, 95, 60));
         ExpectFalse(vitalsAreOk(40, 91, 92));
+        ExpectTrue(vitalsAreOk(100, 95, 60));
+        ExpectFalse(vitalsAreOk(60, 91, 92));
+        ExpectTrue(vitalsAreOk(110, 105, 50));
+        ExpectFalse(vitalsAreOk(120, 70, 80));
+        ExpectTrue(vitalsAreOk(125, 96, 55));
+        ExpectFalse(vitalsAreOk(44, 96, 98));
+        ExpectTrue(vitalsAreOk(90, 122, 65));
+        ExpectFalse(vitalsAreOk(30, 97, 99));
+        ExpectTrue(vitalsAreOk(108, 102, 82));
+        ExpectFalse(vitalsAreOk(50, 91, 92));
         Console.WriteLine("All ok");
         return 0;
     }
